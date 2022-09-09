@@ -1,0 +1,1 @@
+{"name":"PRODUCTLINES","args":{"quantity":"1"},"provider":{"type":"CSV","source":{"type":"DATABASE","args":{"sql_request":""}},"dataSource":null,"args":{"sql":""}},"implementation":{"type":"DATABASE","args":{"file":"1"}},"variables":[]}

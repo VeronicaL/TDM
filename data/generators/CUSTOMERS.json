@@ -1,0 +1,1 @@
+{"name":"CUSTOMERS","args":{"quantity":"20"},"provider":{"type":"CSV","source":{"type":"DATABASE","args":{"sql_request":""}},"dataSource":null,"args":{"sql":""}},"implementation":{"type":"DATABASE","args":{"file":"5"}},"variables":[]}
