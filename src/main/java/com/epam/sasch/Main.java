@@ -1,11 +1,6 @@
 package com.epam.sasch;
 
-import com.epam.sasch.impl.EmployeeRecursiveTransformer;
-import com.epam.sasch.impl.FileReader;
-import com.epam.sasch.impl.FileWriter;
-import com.epam.sasch.impl.FolderReader;
-import com.epam.sasch.impl.LookupTransformation;
-import com.epam.sasch.impl.NoActionTransformer;
+import com.epam.sasch.impl.*;
 import com.epam.sasch.impl.SameValueRandomFillingTransformation;
 
 import java.io.File;
@@ -34,8 +29,11 @@ public class Main {
             System.out.println("Parameters: null \"full_path_to_file\" \"delimiter\" [{<changeColumnIndex> <percent to make null>} - repeat n times if n columns needed] ");
             System.out.println("Rerun the program");
             return;
+        } else if (args[0].equals("null") && args.length == 3) {
+            System.out.println("Parameters: delete \"full_path_to_file\" \"percent_of_invalid_data\"");
+            System.out.println("Rerun the program");
+            return;
         }
-        //to do rows deletion
         new Main().run(args);
     }
 
@@ -77,6 +75,16 @@ public class Main {
                                 , changeColumnIndex
                                 , lookupColumnIndex
                                 , delimiter));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (args[0].equals("delete")) {
+            try {
+                String changeFilePath  = args[1];
+                int percent = Integer.parseInt(args[2]);
+
+                processFolder(changeFilePath,
+                        new DeleteRowsTrasformer(percent));
             } catch (Exception e) {
                 e.printStackTrace();
             }
