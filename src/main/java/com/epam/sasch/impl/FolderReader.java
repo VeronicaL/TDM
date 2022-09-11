@@ -4,7 +4,6 @@ import com.epam.sasch.Reader;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,15 +18,9 @@ public class FolderReader implements Reader {
         this.folderPath = folderPath;
     }
 
-
     private List<String> readFilePaths() {
-
         File f = new File(folderPath);
         String[] pathnames = f.list();
-//
-//        for (String pathname : pathnames) {
-//            System.out.println(pathname);
-//        }
 
         return Arrays.stream(pathnames).map(name -> folderPath + "\\" + name).collect(Collectors.toList());
     }

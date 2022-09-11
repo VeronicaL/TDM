@@ -43,16 +43,7 @@ public class EmployeeRecursiveTransformer implements Transformer {
                 i++;
             }
         }
-//        for (int i = 1; i < copy.size(); i++) {
-//            int subordinatesAmount = rand.nextInt(10) + 1;
-//            String empIndex = que.poll().get(0);
-//            int j;
-//            for (j = 0; j < subordinatesAmount && i + j < copy.size(); j++) {
-//                copy.get(i + j).set(MANAGER_INDEX, empIndex);
-//                que.offer(copy.get(i + j));
-//            }
-//            i += j - 1;
-//        }
+
         return copy.stream()
                 .map(lst -> lst.stream().collect(Collectors.joining(DELIMITER)))
                 .collect(Collectors.toList());
