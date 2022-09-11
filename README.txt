@@ -18,9 +18,3 @@ Parameters: delete \"full_path_to_file\" \"percent_of_invalid_data\"
     1) java -jar .\fileunion-1.3.jar delete "D:\DGT\TDM\fileunion\data\dataProvidersIvalidData\officesInitial.csv" 80
     Then copy the result file officesInitial_output to a common folder with office.csv with valid data
     2) java -jar .\fileunion-1.3.jar "D:\DGT\TDM\fileunion\data\dataProvidersIvalidData\validAndAdditionalOffices"
-
-
-
-	java -jar .\fileunion-1.3.jar lookup 1 0 "," "D:\DGT\TDM\fileunion\data\dataProviders\orderdetailsWithNull" "D:\DGT\TDM\fileunion\data\dataProviders\products.csv" .
-
-	java -jar .\fileunion-1.3.jar null "D:\DGT\TDM\fileunion\data\dataProvidersIvalidData\employees.csv" "," 6 20
